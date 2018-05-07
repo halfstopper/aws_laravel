@@ -12,10 +12,17 @@
 |
 */
 
-//For Route Tutorial
-Route::get('/tasks', 'TaskController@index');
-Route::get('/tasks/{task}', 'TaskController@show');
+Route::get('/','PostsController@index');
+Route::get('/posts/{post}','PostsController@show');
 
+
+//For Route Tutorial
+/*Route::get('/tasks', 'TaskController@index');
+Route::get('/tasks/{task}', 'TaskController@show');
+Route::get('/posts/{post}');*/
+
+
+//Old tutorial
 /*Route::get('/tasks', function () {
 	//$tasks = DB::table('tasks')->latest()->get();
 	//For Eloquent
