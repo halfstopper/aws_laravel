@@ -9,19 +9,10 @@
             @include('posts.post')
           @endforeach
 
-
-
-
-
-
 <!--           <div class="blog-post">
             <h2 class="blog-post-title">Sample blog post</h2>
 
           </div> -->
-
-       
-          
-
           <nav class="blog-pagination">
             <a class="btn btn-outline-primary" href="#">Older</a>
             <a class="btn btn-outline-secondary disabled" href="#">Newer</a>
