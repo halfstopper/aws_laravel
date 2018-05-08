@@ -2,8 +2,11 @@
 
 @section ('content')
 
+<div class="col-md-8 blog-main">
+ 	<h1>{{$post->title}}</h1>
 
- <h1>A place to place post</h1>
+ 	{{$post->body}}
+</div>
 
 
  @endsection
