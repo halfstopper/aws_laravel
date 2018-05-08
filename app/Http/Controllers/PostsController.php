@@ -25,11 +25,12 @@ class PostsController extends Controller
     	$post -> body = request('body');
 
     	$post -> save();*/
-
-    	Post::create([
-    		'title' => request('title'),
-    		'body'  => request('body')
-    	]);
+        //Validating whether is there any field in the textbox
+        $this->validate(request(),[
+            'title' => 'required',
+            'body' => 'required'
+        ]);
+    	Post::create(request(['title','body']));
     	return redirect('/');
     }
 }
