@@ -19,6 +19,9 @@ Route::get('/posts/{post}','PostsController@show');
 
 Route::post('/posts/{post}/comments','CommentsController@store');
 
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
 
 //For Route Tutorial
 /*Route::get('/tasks', 'TaskController@index');
@@ -43,8 +46,3 @@ Route::get('/posts/{post}');*/
 });
 */
 
-
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
