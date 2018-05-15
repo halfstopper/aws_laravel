@@ -12,16 +12,21 @@
 |
 */
 
-Route::get('/','PostsController@index');
+Route::get('/','PostsController@index')->name('home');
 Route::get('/posts/create','PostsController@create');
 Route::post('/posts','PostsController@store');
 Route::get('/posts/{post}','PostsController@show');
 
 Route::post('/posts/{post}/comments','CommentsController@store');
 
-Auth::routes();
+Route::get('/register','RegistrationController@create');
+Route::post('/register','RegistrationController@store');
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/login','SessionController@create');
+
+//Auth::routes();
+
+//Route::get('/home', 'HomeController@index')->name('home');
 
 //For Route Tutorial
 /*Route::get('/tasks', 'TaskController@index');
