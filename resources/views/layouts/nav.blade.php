@@ -1,6 +1,18 @@
 <div class="nav-scroller py-1 mb-2">
   <nav class="nav d-flex justify-content-between">
-    <a class="p-2 text-muted" href="#">World</a>
+
+    <a class="p-2 text-muted active" href="/">Home</a>
+    <a class="p-2 text-muted" href="#">New features</a>
+    <a class="p-2 text-muted" href="#">Press</a>
+    <a class="p-2 text-muted" href="#">New Hires</a>
+
+    @if (Auth::check())
+      <a class="p-2 text-muted" href="#"> {{ Auth::user()->name }}</a>
+    @endif
+    
+
+
+<!--     <a class="p-2 text-muted" href="#">World</a>
     <a class="p-2 text-muted" href="#">U.S.</a>
     <a class="p-2 text-muted" href="#">Technology</a>
     <a class="p-2 text-muted" href="#">Design</a>
@@ -11,19 +23,19 @@
     <a class="p-2 text-muted" href="#">Science</a>
     <a class="p-2 text-muted" href="#">Health</a>
     <a class="p-2 text-muted" href="#">Style</a>
-    <a class="p-2 text-muted" href="#">Travel</a>
+    <a class="p-2 text-muted" href="#">Travel</a> -->
   </nav>
 </div>
 
-<div class="jumbotron p-3 p-md-5 text-white rounded bg-dark">
+<!-- <div class="jumbotron p-3 p-md-5 text-white rounded bg-dark">
   <div class="col-md-6 px-0">
     <h1 class="display-4 font-italic">Title of a longer featured blog post</h1>
     <p class="lead my-3">Multiple lines of text that form the lede, informing new readers quickly and efficiently about what's most interesting in this post's contents.</p>
     <p class="lead mb-0"><a href="#" class="text-white font-weight-bold">Continue reading...</a></p>
   </div>
-</div>
+</div> -->
 
-<div class="row mb-2">
+<!-- <div class="row mb-2">
   <div class="col-md-6">
     <div class="card flex-md-row mb-4 box-shadow h-md-250">
       <div class="card-body d-flex flex-column align-items-start">
@@ -52,6 +64,6 @@
       <img class="card-img-right flex-auto d-none d-lg-block" data-src="holder.js/200x250?theme=thumb" alt="Card image cap">
     </div>
   </div>
-</div>
+</div> -->
 
 

@@ -6,6 +6,12 @@ use App\Post;
 
 class PostsController extends Controller
 {
+    public function __construct(){
+        //For only login user to do blogs
+        $this->middleware('auth')->except(['index','show']);
+    }
+
+
     public function index(){
 
         $posts = Post::latest()->get();
@@ -34,7 +40,12 @@ class PostsController extends Controller
             'title' => 'required',
             'body' => 'required'
         ]);
-    	Post::create(request(['title','body']));
+    	//Post::create(request(['title','body','user_id']));
+
+        auth()->user()->publish(
+            new Post(request(['title','body']))
+        );
+
     	return redirect('/');
     }
 }
