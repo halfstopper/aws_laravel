@@ -1,7 +1,7 @@
 <?php
 
 namespace App;
-
+use Carbon\Carbon;
 
 class Post extends Model
 {
@@ -22,5 +22,18 @@ class Post extends Model
 
     public function user(){ //$comment->post->user
         return $this->belongsTo(User::class);
+    }
+
+    //For archieves
+    public function scopeFilter($query, $filters){
+        $months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+        if (!empty($filters)
+            && array_key_exists('month', $filters)
+            && array_key_exists('year', $filters)
+            && count(array_intersect($filters, $months)) > 0
+            && is_int((int) $filters['year'])){
+                $query->whereMonth('created_at', Carbon::parse($filters['month'])->month);
+                $query->whereYear('created_at', $filters['year']);
+        }
     }
 }

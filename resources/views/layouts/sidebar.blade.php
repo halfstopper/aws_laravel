@@ -7,28 +7,23 @@
   <div class="p-3">
     <h4 class="font-italic">Archives</h4>
     <ol class="list-unstyled mb-0">
-      <li><a href="#">March 2018</a></li>
-      <li><a href="#">February 2018</a></li>
-      <li><a href="#">January 2018</a></li>
-      <li><a href="#">December 2018</a></li>
-      <li><a href="#">November 2018</a></li>
-      <li><a href="#">October 2018</a></li>
-      <li><a href="#">September 2018</a></li>
-      <li><a href="#">August 2018</a></li>
-      <li><a href="#">July 2018</a></li>
-      <li><a href="#">June 2018</a></li>
-      <li><a href="#">May 2018</a></li>
-      <li><a href="#">April 2018</a></li>
+      @foreach($archives as $stats)
+        <li>
+          <a href="/?month={{ $stats['month'] }}&year={{ $stats['year'] }} "> 
+            {{ $stats['month'] . ' ' . $stats['year'] }}
+            </a>
+        </li>
+      @endforeach
     </ol>
   </div>
 
   <div class="p-3">
     <h4 class="font-italic">Elsewhere</h4>
     <ol class="list-unstyled">
-      <li><a href="#">GitHub</a></li>
-      <li><a href="#">Twitter</a></li>
-      <li><a href="#">Facebook</a></li>
+      <li><a href="http://www.github.com">GitHub</a></li>
+      <li><a href="http://www.twitter.com">Twitter</a></li>
+      <li><a href="http://www.facebook.com">Facebook</a></li>
     </ol>
   </div>
-</aside><!-- /.blog-sidebar -->
+</aside><!-- /.blog-sidebar - ->
 
