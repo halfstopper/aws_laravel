@@ -2,7 +2,7 @@
   <nav class="nav d-flex justify-content-between">
 
     <a class="p-2 text-muted active" href="/">Home</a>
-    <a class="p-2 text-muted" href="#">New features</a>
+    <a class="p-2 text-muted" href="#">Features</a>
     <a class="p-2 text-muted" href="#">Press</a>
     <a class="p-2 text-muted" href="#">New Hires</a>
 
