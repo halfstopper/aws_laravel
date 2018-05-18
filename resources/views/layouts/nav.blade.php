@@ -6,9 +6,9 @@
     <a class="p-2 text-muted" href="#">Press</a>
     <a class="p-2 text-muted" href="#">New Hires</a>
 
-    @if (Auth::check())
+<!--     @if (Auth::check())
       <a class="p-2 text-muted" href="#"> {{ Auth::user()->name }}</a>
-    @endif
+    @endif -->
     
 
 
