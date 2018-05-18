@@ -24,6 +24,15 @@ class Post extends Model
         return $this->belongsTo(User::class);
     }
 
+
+    public static function archives(){
+             return static::selectRaw('year(created_at) year, monthname(created_at) month, count(*) published')
+            ->groupBy('year','month')
+            ->orderByRaw('min(created_at) desc')
+            ->get()
+            ->toArray();
+    }
+
     //For archieves
     public function scopeFilter($query, $filters){
         $months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
