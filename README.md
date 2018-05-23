@@ -5,32 +5,32 @@
 ## Setting LAMP stack using Amazon EC2, Followed the tutorial from https://www.youtube.com/watch?v=Um1zQKPVFfU
 Follow Video from 1 to 4
 
-###Install apache server
+### Install apache server
 
 sudo apt-get install apache2
 
-###Restart apache server
+### Restart apache server
 
 sudo service apache2 restart
 sudo apt-get install mysql-server
 *PLEASE REMEMBER THE PASSWORD
 sudo apt-get install php libapache2-mod-php php-mcrypt php-mysql
 
-####To confirm the sql installation, username and password
+#### To confirm the sql installation, username and password
 mysql_secure_installation
 
-###Check password whether correct
+### Check password whether correct
 mysql -u root -p
 
-###Edit the security inbound rule of the EC2 Instance
+### Edit the security inbound rule of the EC2 Instance
 
 Type:HTTP 
 Source: Anywhere
 
-###Use workbench to test connection to the SQL database
+### Use workbench to test connection to the SQL database
 https://www.mysql.com/products/workbench/
 
-###Installing Composer
+### Installing Composer
 
 cd /var/www/html
 sudo curl -O https://getcomposer.org/composer.phar
@@ -38,20 +38,20 @@ sudo mv composer.phar composer
 sudo chmod +x composer
 sudo mv composer /usr/local/bin
 
-####Check composter is installed correctly
+#### Check composter is installed correctly
 
 composer
 
-###Installing necessary dependencies
+### Installing necessary dependencies
 sudo apt-get install php-mbstring
 sudo apt-get install php-xml
 sudo apt-get install zip unzip
 
-###Using Composer to install Laravel (Project name is "laravel")
+### Using Composer to install Laravel (Project name is "laravel")
 
 sudo composer create-project laravel/laravel laravel --prefer-dist
 
-###Edit Apache config file
+### Edit Apache config file
 cd /etc/apache2/sites-available
 Edit '000-default.conf' (use your prefered text editor)
 
